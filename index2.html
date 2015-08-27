@@ -17,40 +17,335 @@
     
     <main>
         
+        <div class="center_fig">
+            <img src="common/img/ADcon.gif" width="680" height="440" alt="" />
+        </div>
         
         <div class="top_bar">
-            <h1>A/D Convertor</h1>
+            <h1>・What is analog-to-digital converter?</h1>
         </div>
         
         <div class="text_temp">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A cell in our body is a type of molecular robot, and is controlled by an intracellular signal transduction system consisting of biochemical reactions. Some dysfunctions in the system occasionally result in serious conditions such as canceration. This condition is characterized by problems in the cellular control system, and in a cancer cell, biochemical reactions become unstable. This does not just apply to cancer cells; various diseases are caused by changes in the control system. If we establish a technique to control a biochemical reaction system according to our purpose, it will open the door for breakthrough developments such as “smart” drugs that lack side effects for various diseases, and drastically change our way of life through a medical revolution.
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In BIOMOD2014, our team focuses on how to implant a control system to regulate biochemical reactions. More precisely, we propose (i) a design of a reaction scheme that regulates the concentration of a target molecule, and (ii) an innovative method to specify the function of a permeable membrane on a non-permeable one. See the Design and Experiments pages for details.
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What is this going to be used for? Just imagine applying our method to an uncontrollable cancer cell. You can find the answer in our YouTube video. Let’s go on a trip into the world of tomorrow that Marco is moaning about…
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The principles of A/D conversion are very simple. A digital signal is obtained by segregating a natural analog signal at regular intervals. The resultant discrete data can be expressed as shown in the figure below. When an analog waveform is discretized at regular intervals (red line), each data-point is converted to a digital value at time t. A computer performs various processes by storing such information in the central processing unit (CPU).
+            </p>
+        </div>
+        
+        <div class="center_fig">
+            <img src="common/img/index2/Figure1.png" width="651" height="100" alt="" />
+        </div>
+        
+           <div class="title_center">Figure1：Flow of A/D Conversion</div>
+        <div class="center_fig_middle2">
+            <img src="common/img/index2/Figure2_2.png" width="400" height="276" alt="" />
+        </div>
+        
+           <div class="title_center">Figure2：Quantized processing</div>
+           
+        <div class="top_bar">
+            <h1>・DNA analog-to-digital converter</h1>
+        </div>
+             
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our DNA analog-to-digital (A/D) converter reads concentration of input molecule and converts it to binary numeral such as 0 or 1 depending on the concentration of DNA. We designed A/D converter based on DNA parallel comparison type A/D converter in electric system by using DNA digital circuits. A/D converter has various methods such as “Double Integral Type”, “Successive comparison Type”, and “Parallel Comparison Type”.  Table1 shows element of each type and possibility in replacing DNA. We focused “Parallel Comparison Type A/D converter” in this time by considering possibility. It is difficult for us to design two types except for parallel comparison type because double integral type needs integrator and successive comparison type needs digital-to-analog converter. As for comparison type A/D converter, it is mainly consisted of logical circuits. For the above reasons, we decided to design DNA A/D converter based on Parallel Comparison Type A/D converter.
+            If you want to see our discussions about each A/D converter in detail, please see the "<a href="index6.html">Supplement</a>".
+            </p>
+        </div>
+        
+        <div class="title_center_table">Table1 Possibility of each A/D converter</div>
+        
+        <div class="center_fig_table">
+            <img src="common/img/index2/Table1.png" width="730" height="200" alt="" />
+        </div>
+        
+        <div class="text_temp">
+            <p>Figure 3 and Figure 4 shows A/D converter structure. We explain our A/D converter process below.</p>
+        </div>
+        
+        <div class="center_fig">
+            <img src="common/img/index2/Figure3.png" width="722" height="420" alt="" />
+        </div>
+        <div class="title_center">Figure 3: Analog to digital (A/D) converter</div>
+        
+        <div class="center_fig_small">
+            <img src="common/img/index2/Figure4_2.png" width="332" height="273" alt="" />
+        </div>
+        <div class="title_center">Figure 4: Encoder</div>
+        
+        
+        <div class="text_temp">
+            <p>Step 1:
+             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As shown in Figure 3, we typically use resistances setting to regulate the input value in an electrical system. However, the DNA concentration in a DNA circuit system cannot be gradually reduced gradually in the case of a voltage divider. Therefore, we applied an Enzyme free device (1) from Tohoku University in BIOMOD2014. (<a href="http://teamsendai2014.github.io/">http://teamsendai2014.github.io/</a>) This device can generate different DNA strands in a given arbitrary order. We focused on two aspects of this device. Firstly, multiple outputs can be obtained from a single input and secondly, the initial transducer concentration is equal to the output DNA concentration. In our project, we applied this device to the production of molecules with a given concentration.In <a href="index3.html">dry experiments</a>, we generated six molecules with various reference concentrations (0.6, 0.5, 0.4, 0.3, 0.2, and 0.1 nM).
+            </p>
+        </div>
+        
+        <div class="text_temp">
+            <p>Step 2:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next, we compared the reference concentration generated in Step 1 to the input DNA concentration by using a <a href="#threshold_gate">threshold gate</a>. The threshold gate output was defined as “1” (high) when it exceeded 0.6 nM. Conversely, we defined outputs of less than 0.6nM, as “0” (low). This means that if the input DNA concentration was higher than the reference concentration, the output was “1”; otherwise, the output was “0”. For an input molecule concentration of 0.35 nM, the DNA strand was released from the top to the third gates through the threshold gate as “1”. Otherwise it was released as “0”.
+            </p>
+        </div>
+        
+        <div class="text_temp">
+            <p>Step 3:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next, we used <a href="#not_gate">NOT gate</a> and <a href="#and_gate">AND gate</a> to examine the “1” ““0” threshold from Step 2, which can indicate where the input DNA concentration corresponds to the reference concentration. As a result, “1” “”0” threshold was found to be the third AND -gate from the top-, with A4 being set to “1”.
+            </p>
+        </div>
+        
+        <div class="text_temp">
+            <p>Step 4:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, the DNA information from Step 4 was encoded through the encoder.
+            As shown in Figure 4, the encoder consists of an <a href="#or_gate">OR gate</a>. In Step 3, A4 was set to “1”, and then x2, x1, and x0 became “1”, “0”, and “0”, respectively, through the encoder. We defined x2 as the most significant bit. Therefore, the conversion result was “100” in this case. This result corresponds to 0.3−0.4 nM in Table 2, and we could confirm that the input molecule concentration (0.35 nM) was converted to 3 bit.
+            In this way, we can convert the input DNA that exceeds the threshold molecule concentration for the first time to a 3-bit digital number using our DNA analog-to-digital (A/D) converter. Although, this A/D converter is currently outputting a 3-bit result, “n”-bit expressions can be obtained using 2n-1 comparators.
+                <FONT size="4"><br>See “<a href="index3.html">Dry experiment</a>” for the simulation result for our DNA A/D converter.</FONT>
             </p>
         </div>
         
         <div class="top_bar">
-            <h1>Seesaw Gate</h1>
+            <h1>・Key elements</h1>
         </div>
         
         <div class="text_temp">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A cell in our body is a type of molecular robot, and is controlled by an intracellular signal transduction system consisting of biochemical reactions. Some dysfunctions in the system occasionally result in serious conditions such as canceration. This condition is characterized by problems in the cellular control system, and in a cancer cell, biochemical reactions become unstable. This does not just apply to cancer cells; various diseases are caused by changes in the control system. If we establish a technique to control a biochemical reaction system according to our purpose, it will open the door for breakthrough developments such as “smart” drugs that lack side effects for various diseases, and drastically change our way of life through a medical revolution.
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In BIOMOD2014, our team focuses on how to implant a control system to regulate biochemical reactions. More precisely, we propose (i) a design of a reaction scheme that regulates the concentration of a target molecule, and (ii) an innovative method to specify the function of a permeable membrane on a non-permeable one. See the Design and Experiments pages for details.
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What is this going to be used for? Just imagine applying our method to an uncontrollable cancer cell. You can find the answer in our YouTube video. Let’s go on a trip into the world of tomorrow that Marco is moaning about…
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In our project, we designed the following DNA circuits and combined them to realize a DNA A/D converter.
             </p>
         </div>
         
         <div class="top_bar">
-            <h1>Explanation of Each Gate</h1>
+            <h1>-Seesaw gate</h1>
         </div>
         
         <div class="text_temp">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A cell in our body is a type of molecular robot, and is controlled by an intracellular signal transduction system consisting of biochemical reactions. Some dysfunctions in the system occasionally result in serious conditions such as canceration. This condition is characterized by problems in the cellular control system, and in a cancer cell, biochemical reactions become unstable. This does not just apply to cancer cells; various diseases are caused by changes in the control system. If we establish a technique to control a biochemical reaction system according to our purpose, it will open the door for breakthrough developments such as “smart” drugs that lack side effects for various diseases, and drastically change our way of life through a medical revolution.
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In BIOMOD2014, our team focuses on how to implant a control system to regulate biochemical reactions. More precisely, we propose (i) a design of a reaction scheme that regulates the concentration of a target molecule, and (ii) an innovative method to specify the function of a permeable membrane on a non-permeable one. See the Design and Experiments pages for details.
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What is this going to be used for? Just imagine applying our method to an uncontrollable cancer cell. You can find the answer in our YouTube video. Let’s go on a trip into the world of tomorrow that Marco is moaning about…
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A seesaw gate is based on a DNA strand displacement reaction, and it is possible to realize a logic circuit by combining this gate appropriately. The basic function of a seesaw gate is to compare an input signal to a set threshold. Then, if the input concentration is less than the threshold, the input signal is released. If the input concentration exceeds the threshold, the output is generated by DNA hairpin loops, which are used as fuel. The seesaw gate is composed of two DNA molecular reactions, the first of which is the threshold process. Figure 5 shows a model of the threshold process.
             </p>
         </div>
         
+        <div class="center_fig_middle">
+            <img src="common/img/index2/Figure5.png" width="500" height="474" alt="" />
+        </div>
+        <div class="title_center">Figure 5: Threshold model </div>
+        
+        <div class="text_temp">
+            <p>The input molecule including a S1TS2 sequence is single-stranded DNA (ssDNA) and the molecule deciding the threshold is double-stranded DNA (dsDNA) that includes a toehold domain T’. Finally, the input ssDNA is consumed through the DNA strand displacement reaction based on T’. Therefore, the input molecule concentration must exceed the threshold molecule concentration for gate operation to occur.
+            </p>
+        </div>
+        <div class="text_temp">
+            <p>The second molecular reaction is the output generation process. Figure 6 shows a strand displacement model of this process.
+            </p>
+        </div>
+        <div class="center_fig_middle">
+            <img src="common/img/index2/Figure6.png" width="500" height="397" alt="" />
+        </div>
+        <div class="title_center">Figure 6: Output generation process </div>
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As shown in Figure 6, the input ssDNA causes a strand displacement reaction with “gate:output”, yielding a single strand output and “gate:input”. Moreover, the fuel and gate:input cause a strand displacement reaction, and the gate:input is replaced by input ssDNA and “gate:fuel”. This is because the gate:input includes T’, which combines with the fuel. The important aspect of this reaction is that the consumed input ssDNA is replenished by the fuel. Figure 7 shows the structure of each DNA strand in the seesaw gate.
+            </p>
+        </div>
+        <div class="center_fig_middle">
+            <img src="common/img/index2/Figure7.png" width="550" height="378" alt="" />
+        </div>
+        <div class="title_center">Figure 7: DNA strands for seesaw gate</div>
+        
+        <div class="top_bar">
+            <h1>-Gate structure</h1>
+        </div>
+        
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First, we explain gate structure.
+            </p>
+        </div>
+        
+        <div class="gazo-box">
+            <p><img src="common/img/index2/Figure8(a).png" alt="" width="322" height="180"></p>
+                <p class="gazo-box_p">Figure 8a: Wire structure</p>
+        </div>
+        
+        <div class="gazo-box">
+            <p><img src="common/img/index2/Figure8(b).png" alt="" width="367" height="180"></p>
+                <p class="gazo-box_p">Figure 8b: Gate structure</p>
+        </div>
+        
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 8a shows a simplified wire-structure diagram. A wire is a signal strand connecting each gate. Here, we show a wire connecting the right side of “gate-i” to the left side of “gate-j” and define it as w<sub><small>i,j</small></sub> .
+            </p>
+        </div>
+        
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Figure 8b shows a simplified diagram of a seesaw gate circuit. Gate-i can be connected to another gate by an arbitrary number of wires on each side. The initial concentration of the w<sub><small>i,j</small></sub> signal is written on each wire linking the right side of gate-i to the left side of gate-j. The initial concentrations of the g<sub><small>j,i:i</small></sub> (w<sub><small>i,j</small></sub>, which combines with gate-i) and g<small><sub>i,j:j</small></sub> (w<small><sub>i,j</small></sub>, which combines with gate-j) gate complexes are written in parallel node. The initial concentrations of the threshold th<small><sub>j,i:i</small></sub> to w<small><sub>j,i</small></sub> reaching gate-i and the threshold th<small><sub>i,j:j</small></sub> to w<small><sub>j,i</small></sub> reaching gate-j are written using a negative number in parallel node. If the initial gate and threshold concentrations are 0 nM, the threshold concentration number is omitted in parallel node.
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We designed the following four gates based on DNA strand replacement reactions, setting x = [50 nM] to normalize the variables.
+            </p>
+        </div>
+     
+        <div class="top_bar">
+            <h1 id="threshold_gate">1. Threshold gate </h1>
+        </div>
+        
+        <div class="gazo-box">
+            <p><img src="common/img/index2/Figure9.png" alt="" width="359" height="239"></p>
+                <p class="gazo-box_p2">Figure 9: Threshold gate</p>
+                </div>
+        
+        <div class="gazo-box">
+            <p><img src="common/img/index2/Figure10.png" alt="" width="303" height="239"></p>
+                <p class="gazo-box_p3">Figure 10: Simulation result for threshold gate</p>
+        </div>
+        
+        
+        
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In Figure 9, the presence of a number 1 on the right side of the gate indicates that the gate:output is 1x [mol]. The number 2, which is attached to w<sub><small>2,4</small></sub>, indicates that the fuel is 2x [mol]. The -0.6 on the left side of the gate indicates that the threshold is 0.6x [mol]. Figure 10 shows the results of a threshold gate simulation. Here, the input concentrations were set to 1.0, 0.7, 0.6, or 0.5 [nM]. If the input concentration exceeded the threshold (0.6 [nM]), the output was classed as “high” and released.
+                As shown in Figure 10, if the input w<small><sub>1,2</small></sub> concentration is set higher (lower) than the 0.6x threshold, the output w<small><sub>2,3</small></sub> indicates a “high” (“low”) value.
+            </p>
+        </div>
+        
+        <div class="top_bar">
+            <h1 id="not_gate">2. NOT gate</h1>
+        </div>
+        <div class="center_fig_middle">
+            <img src="common/img/index2/Figure11.png" width="550" height="320" alt="" />
+        </div>
+        
+        <div class="title_center">Figure 11: NOT gate</div>
+        
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To realize a NOT gate, a structure including a DNA strand for output and an ssDNA called an “inverter” is required. An inverter has a complementary base input sequence. Therefore, the inverter reacts with input DNA by hybridization and obstructs/blocks strand displacement reactions, because the reaction velocity of hybridization is significantly faster than that of a strand displacement reaction.
+            After reacting to the input, the inverter reacts to dsDNA, including the input toehold, using it as input to generate output.
+            
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assume that the input concentration is sufficient. Therefore, the inverter is used to react with the input through hybridization and is consumed. The output generated by the inverter is relatively insubstantial. As a result, a low output is generated for a high input. Next, assume that the input concentration is insufficient. The inverter is consumed by a reaction with the input but, as the input has insufficient concentration, the inverter can generate a sufficient output concentration. As a result, a high output is generated for a low input.
+            
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This description corresponds to the ideal behavior of a NOT gate. However, the NOT gate does not, in fact, function. Therefore, we focus on our simulation results for the NOT gate shown in Figure 12. We set the inverter concentration to 0.8x [mol].
+            When a NOT gate is designed without a threshold gate, it can only function if the input DNA concentration is significantly less than the inverter. This is because a high output is generated for a low input (Fig. 12, left). However, the NOT gate cannot function when the input concentration is close to the inverter. This is because a high input produces a low output (Fig. 12, right).
+            </p>
+            
+        </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/index2/Figure12_1.png" alt="" width="370" height="337"></p>
+              
+                </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/index2/Figure12_2.png" alt="" width="370" height="337"></p>
+                
+        </div>
+        
+        <div class="title_center2">
+        <p>Figure 12: Simulation results for NOT gate and input concentrations of 0.1x (left), input concentration of 0.2x (right). We consider output concentrations of 0.0−0.4x and 0.6−1.0x as low and high, respectively.
+        </p>
+        </div>
+        
+        <div class="text_temp">
+            <p>To overcome this difficulty, we attempted a NOT gate design that does not require threshold gates. However, it is impossible to obtain the desired low or high outputs in such a case, as the received information cannot be classified as high or low.
+            </p>
+        </div>
+        
+        <div class="text_temp">
+            <p>We overcame the above problem by combining a NOT gate with a threshold gate. First, we classify input that is lower or higher than the threshold as low or high, respectively. When a low input is obtained, a high output can be generated, and vice versa, through adjustment of the inverter concentration. Therefore, we realized a NOT gate for our A/D converter.
+            </p>
+        </div>
+        
+        <div class="center_fig_small">
+            <img src="common/img/index2/Figure13.png" width="399" height="290" alt="" />
+        </div>
+        
+        <div class="title_center">Figure13: NOT gate using threshold gates.</div>
+        
+        <div class="text_temp">
+            <p>We demonstrate the behavior/functionality of the NOT gate using threshold gates in Figure 13. Gate2 generates the high or low output ssDNA w<sub><small>2,4</sub></small> by passing the input ssDNA w<sub><small>1,2</sub></small> to the threshold. The w<sub><small>2,4</sub></small> obtained from gate2 reacts with the inverter. Then, the inverter becomes the input of gate7 and releases w<sub><small>7,8</sub></small> through this gate. Gate4 is a threshold gate that is consumed by the inverter to increase the w<sub><small>2,4</sub></small> concentration. In addition, we set the threshold value to release output w<sub><small>4,5</sub></small> as high (low) when w<sub><small>2,4</sub></small> is high (low).
+           
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Simulated results for the NOT gate shown in Figure 13 with the same conditions as in Figure 12 as shown in Figure 14.
+            </p>
+        </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/index2/Figure14_1.png" alt="" width="370" height="357"></p>
+                
+        </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/index2/Figure14_2.png" alt="" width="370" height="357"></p>
+                
+        </div>
+        
+        <div class="title_center2">
+            <p>Figure 14: Simulation results of NOT gate shown in Figure 13 using threshold gates for input concentrations of 0.1x and the same conditions as in Figure 12. (left) High w<sub><small>1,2</sub></small>. (right) Low w<sub><small>1,2</sub></small>.
+            </p>
+        </div>
+        
+        <div class="text_temp">
+            <p>As shown in Figure 14, we verified the functionality of the NOT gate for high and low w<sub><small>1,2</sub></small>. Figure 14, left and right, respectively. These two cases are discussed in more detail below:
+            <br>(1). High w<sub><small>1,2</sub></small> (Figure 14, left).
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We define the input ssDNA w<sub><small>1,2</sub></small> and inverter concentration as 0.8x [mol]. Then, the output w<sub><small>2,4</sub></small> of gate2 is released as a high (0.6−1x) result, as the input concentration exceeds the threshold value 0.6x [mol]. Then, w<sub><small>2,4</sub></small> reacts with the inverter by hybridization. The higher the w<sub><small>2,4</sub></small> concentration, the greater the consumption of the inverter concentration. The consumed inverter concentration (0−0.2x) becomes the input of gate7, but it cannot exceed the threshold value. Therefore, w<sub><small>7,8</sub></small> is released as a low result. Hence, a low output can be obtained for a high input.
+            <br>(2). Low w<sub><small>1,2</sub></small> is low (Figure 14, right)
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We define the w<sub><small>1,2</sub></small> input as 0.2x [mol]. Then, the output w<sub><small>2,4</sub></small> of gate2 is  low (0−0.2x), as the input concentration cannot exceed the threshold value 0.6x [mol]. The w<sub><small>2,4</sub></small> undergoes the same reaction as above, with the consumed inverter concentration (0.6−0.8x) becoming the input of gate7. Here, it can exceed the threshold value and, therefore, w<sub><small>7,8</sub></small> is released as high. As a result, a high output can be obtained for a low input.
+              <br><br>Hence, the problem illustrated in Figure 12 has been overcome.
+            </p>
+        </div>
+        
+        <div class="top_bar">
+            <h1 id="and_gate">3. AND gate</h1>
+        </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/index2/Figure15.png" alt="" width="339" height="258"></p>
+                <p class="gazo-box_p">Figure 15: AND gate</p>
+                </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/index2/Figure16.png" alt="" width="330" height="253"></p>
+                <p class="gazo-box_p3">Figure 16: Simulation result for AND gate</p>
+        </div>
+        
+        <div class="text_temp">
+            <p>An AND gate releases an output ssDNA when both inputs are high, and the structure of this gate is shown in Figure 15. We prepare two seesaw gates (gate2 and gate4) including threshold gates. These include fuel provided by other gate outputs. The gate2 fuel is provided by output from gate4. Therefore, the output from gate2 is catalytic when both inputs (w<sub><small>1,2</sub></small> and w<sub><small>3,4</sub></small>) are high. Gate8 is a routing gate that can run from right side of one gate to the right side of another gate. Gate5 provides a signal to remove the stoichiometry trigger of gate2 when only input w<sub><small>1,2</sub></small> of gate2 is high.
+            Figure 16 shows the result of the AND gate simulation, in which the following four cases were verified:
+            </p>
+
+        </div>
+        
+        <div class="text_temp">
+            <p>(1) Both w<sub><small>1,2</sub></small> and w<sub><small>3,4</sub></small> are low.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The inputs are consumed by each threshold, such as gate2 and gate4. Therefore, output w<sub><small>5,6</sub></small> is low.
+            </p>
+        </div>
+        <div class="text_temp">
+            <p>(2) w<sub><small>1,2</sub></small> is low and w<sub><small>3,4</sub></small> is high.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As w<sub><small>3,4</sub></small> is high, the output w<sub><small>4,8</sub></small> from gate4 is high. This releases routing catalysis w<sub><small>8,10</sub></small> from gate8. Further, w<sub><small>2.8</sub></small>, which is the gate2 fuel wire, is activated. However, the final output is low, because w<sub><small>1,2</sub></small> is low.
+            </p>
+        </div>
+        <div class="text_temp">
+            <p>(3) Both w<sub><small>1,2</sub></small> and w<sub><small>3,4</sub></small> are high.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As above, w<sub><small>2,5</sub></small>, which is the gate2 fuel wire, is activated. w<sub><small>1,2</sub></small> exceeds the threshold. Then, the output w<sub><small>2,5</sub></small> from gate2 is high and w<sub><small>2,5</sub></small> exceeds the threshold of gate5. Therefore, the final output w<sub><small>5,6</sub></small> is high.
+            </p>
+        </div>
+        <div class="text_temp">
+            <p>(4)w<sub><small>1,2</sub></small> is high and w<sub><small>3,4</sub></small> is low.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As w<sub><small>3,4</sub></small> is low, w<sub><small>2,8</sub></small> (the fuel wire for gate2) is not activated. Therefore, the final output w<sub><small>5,6</sub></small> is low.
+            </p>
+        </div>
+        
+        <div class="top_bar">
+            <h1 id="or_gate">4. OR gate</h1>
+        </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/index2/Figure17.png" alt="" width="350" height="186"></p>
+                <p class="gazo-box_p">Figure 17: OR gate</p>
+                </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/index2/Figure18.png" alt="" width="280" height="233"></p>
+                <p class="gazo-box_p3">Figure 18: OR gate simulation result</p>
+        </div>
+        
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An OR gate can also be realized by using a seesaw gate in conjunction with an AND gate, as shown in Figure 17. In this case, the seesaw gate has two inputs (w<sub><small>1,3</sub></small> and w<sub><small>2,3</sub></small>), which are compared by setting the threshold concentration to [0.5 nM]. If either input can exceed a threshold value, w<sub><small>3,4</sub></small> is released. However, if neither of the inputs can exceed this value, w<sub><small>3,4</sub></small> is not released and the inputs are removed as noise.<br>We verified the following two OR gate scenarios from the results shown in Figure 18:
+            <br>(1)	Both w<sub><small>1,3</sub></small> and w<sub><small>2,3</sub></small> are low.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As shown in Figure 18, the output w<sub><small>3,4</sub></small> is low as the input concentration cannot exceed the threshold.
+            <br>(2) Either input w<sub><small>1,3</sub></small> or w<sub><small>2,3</sub></small> is high.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As shown in Figure 18, the output w<sub><small>3,4</sub></small> is high as either input can exceed the threshold.
+            </p>
+        </div>
+     
+        
+    
     </main>
     
 </div><!-- /#mainContent -->
@@ -80,59 +375,27 @@
 <footer class="demo-footer" role="contentinfo">
     <div class="container">
         <div class="row">
-            <div class="col-md-2 col-sm-6">
-                <p><strong>Top</strong></p>
+            <div class="col-md-4 col-sm-6">
+                <p><strong><a href="index.html">Top</a></strong></p>
                 <div class="list-group margin-top-sm">
-                    <a href="#" class="list-group-item">Abstract <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Movie <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-               
+                    
                 </div>
             </div>
-            <div class="col-md-2 col-sm-6">
-                <p><strong>Design</strong></p>
+            <div class="col-md-4 col-sm-6">
+                <p><strong><a href="index2.html">Design</a></strong></p>
                 <div class="list-group margin-top-sm">
                     <a href="#" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
                     <a href="#" class="list-group-item">Seesaw gate<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
                     <a href="#" class="list-group-item">Explanation of Each Gate <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
                 </div>
             </div>
-            <div class="col-md-2 col-sm-6">
-                <p><strong>Dry Experiment</strong></p>
-                <div class="list-group margin-top-sm">
-                    <a href="#" class="list-group-item">A/D Convertor<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Seesaw gate <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Explanation of Each Gate <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                </div>
+            <div class="col-md-4 col-sm-6">
+                <p><strong><a href="index3.html">Dry Experiment</a></strong></p>
+                <p><strong><a href="index4.html">Team members</a></strong></p>
+                <p><strong><a href="index5.html">Supplement</a></strong></p>
             </div>
-            <div class="col-md-2 col-sm-6">
-                <p><strong>Team members</strong></p>
-                <div class="list-group margin-top-sm">
-                    <a href="#" class="list-group-item">Faculty memtor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Graduate students <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Undergraduate students <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6">
-                <p><strong>Special Tanks</strong></p>
-                <div class="list-group margin-top-sm">
-                    <a href="#" class="list-group-item">Label <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Label <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Label <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Label <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Label <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-6">
-                <p><strong>Supplement</strong></p>
-                <div class="list-group margin-top-sm">
-                    <a href="#" class="list-group-item">Label1.1 <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Label1.2 <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Label1.3 <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Label1.4 <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Label1.5 <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                </div>
-            </div>
-        
+            
+            
         </div><!-- /.row -->
     </div><!-- /.container -->
 </footer><!-- /#footer -->
