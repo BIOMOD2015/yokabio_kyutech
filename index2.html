@@ -51,7 +51,7 @@
             </p>
         </div>
         
-        <div class="title_center_table">Table1 Possibility of each A/D converter</div>
+        <div class="title_center_table">Table 1. Possibility of each A/D converter</div>
         
         <div class="center_fig_table">
             <img src="common/img/index2/Table1.png" width="730" height="200" alt="" />
@@ -94,7 +94,16 @@
             <p>Step 4:
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, the DNA information from Step 4 was encoded through the encoder.
             As shown in Figure 4, the encoder consists of an <a href="#or_gate">OR gate</a>. In Step 3, A4 was set to “1”, and then x2, x1, and x0 became “1”, “0”, and “0”, respectively, through the encoder. We defined x2 as the most significant bit. Therefore, the conversion result was “100” in this case. This result corresponds to 0.3−0.4 nM in Table 2, and we could confirm that the input molecule concentration (0.35 nM) was converted to 3 bit.
-            In this way, we can convert the input DNA that exceeds the threshold molecule concentration for the first time to a 3-bit digital number using our DNA analog-to-digital (A/D) converter. Although, this A/D converter is currently outputting a 3-bit result, “n”-bit expressions can be obtained using 2n-1 comparators.
+            </p>
+        </div>
+        <div class="title_center_table">Table2：Analog and digit value correspond table</div>
+        
+        <div class="center_fig_table2">
+            <img src="common/img/index2/Table2.png" width="483" height="305" alt="" />
+        </div>
+        
+        <div class="text_temp">
+            <p>In this way, we can convert the input DNA that exceeds the threshold molecule concentration for the first time to a 3-bit digital number using our DNA analog-to-digital (A/D) converter. Although, this A/D converter is currently outputting a 3-bit result, “n”-bit expressions can be obtained using 2n-1 comparators.
                 <FONT size="4"><br>See “<a href="index3.html">Dry experiment</a>” for the simulation result for our DNA A/D converter.</FONT>
             </p>
         </div>
@@ -129,11 +138,11 @@
                 </div>
         
         <div class="text_temp">
-            <p>The input molecule including a S1TS2 sequence is single-stranded DNA (ssDNA) and the molecule deciding the threshold is double-stranded DNA (dsDNA) that includes a toehold domain T’. Finally, the input ssDNA is consumed through the DNA strand displacement reaction based on T’. Therefore, the input molecule concentration must exceed the threshold molecule concentration for gate operation to occur.
+            <p>The input molecule including a S<sub><small>1</sub></small>TS<sub><small>2</sub></small> sequence is single-stranded DNA (ssDNA) and the DNA deciding the threshold is double-stranded DNA (dsDNA) that includes a toehold domain T’. Finally, the input ssDNA is consumed through the DNA strand displacement reaction based on T’. Therefore, the input DNA concentration must exceed the threshold concentration for gate operation to occur.
             </p>
         </div>
         <div class="text_temp">
-            <p>The second molecular reaction is the output generation process. Figure 6 shows a strand displacement model of this process.
+            <p>The second DNA reaction is the output generation process. Figure 6 shows a strand displacement model of this process.
             </p>
         </div>
  
@@ -163,15 +172,16 @@
             </p>
         </div>
         
-        <div class="gazo-box">
-            <p><img src="common/img/index2/Figure8(a).png" alt="" width="322" height="180"></p>
-                <p class="gazo-box_p">Figure 8a: Wire structure</p>
+        <div class="center_fig_middle3">
+            <img src="common/img/index2/Figure8(a).png" width="225" height="180" alt="" />
         </div>
+        <div class="title_center">Figure 8a: Wire structure</div>
         
-        <div class="gazo-box">
-            <p><img src="common/img/index2/Figure8(b).png" alt="" width="367" height="180"></p>
-                <p class="gazo-box_p">Figure 8b: Gate structure</p>
+        <div class="center_fig_middle">
+            <img src="common/img/index2/Figure8(B).png" width="513" height="237" alt="" />
         </div>
+        <div class="title_center">Figure 8b: Gate structure</div>
+        
         
         <div class="text_temp">
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 8a shows a simplified wire-structure diagram. A wire is a signal strand connecting each gate. Here, we show a wire connecting the right side of “gate-i” to the left side of “gate-j” and define it as w<sub><small>i,j</small></sub> .
@@ -216,7 +226,7 @@
         <div class="title_center">Figure 11: NOT gate</div>
         
         <div class="text_temp">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To realize a NOT gate, a structure including a DNA strand for output and an ssDNA called an “inverter” is required. An inverter has a complementary base input sequence. Therefore, the inverter reacts with input DNA by hybridization and obstructs/blocks strand displacement reactions, because the reaction velocity of hybridization is significantly faster than that of a strand displacement reaction.
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To realize a NOT gate, a structure including a DNA strand for output and an ssDNA called an “inverter” is required. An inverter has a complementary base input sequence. Therefore, the inverter reacts with input DNA by hybridization and obstructs strand displacement reactions, because the reaction velocity of hybridization is significantly faster than that of a strand displacement reaction.
             After reacting to the input, the inverter reacts to dsDNA, including the input toehold, using it as input to generate output.
             
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assume that the input concentration is sufficient. Therefore, the inverter is used to react with the input through hybridization and is consumed. The output generated by the inverter is relatively insubstantial. As a result, a low output is generated for a high input. Next, assume that the input concentration is insufficient. The inverter is consumed by a reaction with the input but, as the input has insufficient concentration, the inverter can generate a sufficient output concentration. As a result, a high output is generated for a low input.
@@ -259,7 +269,7 @@
         <div class="title_center">Figure13: NOT gate using threshold gates.</div>
         
         <div class="text_temp">
-            <p>We demonstrate the behavior/functionality of the NOT gate using threshold gates in Figure 13. Gate2 generates the high or low output ssDNA w<sub><small>2,4</sub></small> by passing the input ssDNA w<sub><small>1,2</sub></small> to the threshold. The w<sub><small>2,4</sub></small> obtained from gate2 reacts with the inverter. Then, the inverter becomes the input of gate7 and releases w<sub><small>7,8</sub></small> through this gate. Gate4 is a threshold gate that is consumed by the inverter to increase the w<sub><small>2,4</sub></small> concentration. In addition, we set the threshold value to release output w<sub><small>4,5</sub></small> as high (low) when w<sub><small>2,4</sub></small> is high (low).
+            <p>We demonstrate the functionality of the NOT gate using threshold gates in Figure 13. Gate2 generates the high or low output ssDNA w<sub><small>2,4</sub></small> by passing the input ssDNA w<sub><small>1,2</sub></small> to the threshold. The w<sub><small>2,4</sub></small> obtained from gate2 reacts with the inverter. Then, the inverter becomes the input of gate7 and releases w<sub><small>7,8</sub></small> through this gate. Gate4 is a threshold gate that is consumed by the inverter to increase the w<sub><small>2,4</sub></small> concentration. In addition, we set the threshold value to release output w<sub><small>4,5</sub></small> as high (low) when w<sub><small>2,4</sub></small> is high (low).
            
            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Simulated results for the NOT gate shown in Figure 13 with the same conditions as in Figure 12 as shown in Figure 14.
             </p>

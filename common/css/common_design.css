@@ -197,6 +197,9 @@ nav ul li.here > span {
 .center_fig_middle2{
     margin:30px 0 20px 150px;
 }
+.center_fig_middle3{
+    margin:30px 0 20px 250px;
+}
 .title_center{
     font-size:16px;
     margin:10px 0 40px 300px;
@@ -207,6 +210,9 @@ nav ul li.here > span {
 }
 .center_fig_table{
     margin:0px 0 30px 20px;
+}
+.center_fig_table2{
+    margin:0px 0 30px 200px;
 }
 .title_center_table{
     font-size:16px;
