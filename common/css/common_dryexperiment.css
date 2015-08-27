@@ -51,9 +51,10 @@ main, header, footer, section, article, figure ,figcaption {
 display: block;
 }
 body #wrapper {
-width: 1100px;
+
+width: 1150px;
 margin: 0 auto;
-padding: 30px 50px;
+padding: 30px 0px 0px 0px;
 font-family:'Times New Roman';
 background-image:url("../img/back_ground_hinomaru.png"),url("../img/back_ground.png");
 background-repeat: no-repeat,repeat;
@@ -67,15 +68,23 @@ clear: both;
 height: 0;
 width: 0;
 }
+
+.center_fig{
+	margin:30px 0 20px 0px;
+}
+.center_fig_small{
+	margin:30px 0 20px 200px;
+}
 /*side
 -----------------------------------------*/
 #sidebar {
+
 color: #FFF;
 width: 200px;
 float: right;
 }
 #mainContent {
-width: 770px;
+width: 870px;
 float: right;
 margin: 0px 0px 0 30px;
 }
@@ -91,7 +100,7 @@ nav ul li span {
     display:block;
     width:200px;
     height:35px;
-    padding:5px 0 0 20px;
+    padding:4px 0 0 20px;
     line-height:1.6em;
     text-decoration:none;
     color:#696969;
@@ -108,7 +117,7 @@ nav ul li.here > span {
     color: #FFF;
 }
 .side_fig{
-    margin:50px 0px 50px 0px;
+    margin:50px 110px 50px -30px;
 }
 
 /*footer
