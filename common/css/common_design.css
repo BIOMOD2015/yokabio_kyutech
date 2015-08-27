@@ -172,9 +172,14 @@ nav ul li.here > span {
     color:#000;
 }
 .text_temp {
+<<<<<<< HEAD
     clear:both;
     font-family:'Times New Roman';
     margin:10px 20px 10px 30px;
+=======
+     font-family:'Times New Roman';
+     margin:10px 20px 10px 50px;
+>>>>>>> origin/gh-pages
     font-size:16px;
     line-height:1.6em;
     padding-top:8px;
