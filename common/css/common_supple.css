@@ -173,6 +173,14 @@ nav ul li.here > span {
     margin:10px 0 10px 30px;
     color:#000;
 }
+.top_bar2 {
+    font-family:'Times New Roman';
+    clear:both;
+    width:840px;
+    height:35px;
+    margin:10px 0 10px 30px;
+    color:#000;
+}
 .text_temp {
      font-family:'Times New Roman';
      margin:10px 20px 10px 30px;
