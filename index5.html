@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>BIOMOD2015</title>
+<link rel="stylesheet" href="common/css/common_supple.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.1/css/bootstrap.min.css">
+</head>
+
+<body id="top" class="top">
+
+
+<div id="wrapper">
+    
+<div id="mainContent">
+    
+    <main>
+        
+        <div class="top_bar">
+            <h1>・Various types of A/D converter in electric system</h1>
+        </div>
+        
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In this section, we describe the main A/D conversion processes. </p>
+        </div>
+        
+        <div class="top_bar">
+            <h3>(i) Double-Integral Type A/D converter</h3>
+        </div>
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A double-integral A/D converter converts analog information into digital data by counting clock signals (Figure 1). The A/D conversion is performed according to the following steps.</p>
+        </div>
+        
+        <div class="center_fig">
+            <img src="common/img/index5/Figure1_final.png" width="651" height="404" alt="" />
+        </div>
+        <div class="title_center">Figure 1: Double-Integral Type A/D converter</div>        
+    </main>
+    
+    <div class="text_temp">
+        <p>Step 1:
+        <br>First, the switch on the input voltage (V<sub><small>in</sub></small>) side of the analog input is turned on, and the resultant V<sub><small>in</sub></small> is integrated for a set time t0. After t0 has elapsed, the V<sub><small>in</sub></small> is switched to the reference voltage (V<sub><small>ref</sub></small>) side, and V<sub><small>ref</sub></small> is integrated by an integrator for a period of time ti. Then, the output gradient from the integrator becomes negative, and the output decreases. This occurs because V<sub><small>ref</sub></small> has opposite sign to the analog V<sub><small>in</sub></small>.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Step 2:
+        <br>The output from the integrator is compared with the ground (GND) value by the comparator, and if the output value corresponds to that of the GND, the comparator outputs “1”. Otherwise, “0” is outputted. The “1” output causes the integrator output to become “0”.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Step 3:
+        <br>The control logic activates the switch in Step 1, and gives the order to reset the counter and to open the gate.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Step 4:
+        <br>When the gate opens, the counter begins counting the number of clock signals.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Step 5:
+        <br>When the output value obtained by the comparator in Step 2 changes from “0” to “1”, the control logic gives the order to close the gate, and the counter stops.
+        <br> As mentioned above, the analog voltage is converted to a digital value based on the number of counted clock signals. The conversion rate of the double-integral A/D converter is relatively slow; however, this device is used for voltmeters outputting digital values, because it has high resolution and sensitivity.
+        In an integrator, an integrated circuit (IC) element called an operational amplifier is used, which amplifies an analog signal. As shown in Figure 1, an operational amplifier has two inputs: V+ (non-inverted input terminal) and V- (inverted input terminal). Further, it can determine the output voltage such that the difference in potential between the two input voltages becomes 0 V. Although subtraction processing is necessary in order to measure the potential difference between the two inputs, it is very difficult to design a subtraction process in a reaction scheme using DNA molecules. Therefore, at present, we are unable to realize a double-integral A/D converter using DNA molecules. Nonetheless, the possibility to design an integrator using DNA exists. This is therefore an opportunity to implement an A/D converter, because subtraction processing can be defined using the two’s complement operation, which is one of the advantages of digitization.
+        </p>
+    </div>
+    
+    <div class="center_fig_middle">
+        <img src="common/img/index5/Figure2.png" width="491" height="154" alt="" />
+    </div>
+    <div class="title_center">Figure 2: Comparator</div>
+    
+    <div class="top_bar">
+        <h3>(ii) Successive-Comparison Type A/D converter</h3>
+    </div>
+    <div class="text_temp">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Successive comparison is a method that produces a digital output using a successive approximation to match an analog input voltage, on which a sample hold is performed, to a voltage outputted from a D/A converter. Figure 3 shows a successive-comparison-type A/D converter for a 3-bit output, showing the conversion of a 6-V analog input to a digital output value
+        </p>
+    </div>
+    
+    <div class="center_fig_middle">
+        <img src="common/img/index5/Figure3.png" width="500" height="315" alt="" />
+    </div>
+    <div class="title_center2">Figure 3: Successive-Comparison Type A/D converter</div>
+    
+    <div class="text_temp">
+        <p>Step 1:
+        <br>The analog input maintains a voltage at a certain moment in time using a sample hold circuit. The successive-comparison-type A/D converter conducts more frequent signal voltage changes than the double-integral device. This function prevents the input voltage from changing while the sample hold circuit converts the analog input.
+        </p>
+    </div>
+    
+    <div class="text_temp">
+        <p>Step 2:
+        <br>The comparator compares the output value of the analog input which is sample-held in Step 1 with that of the D/A converter output. If the former value is larger than or equal to the latter, the output becomes “1”. If the latter value is larger, the output becomes “0”.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Step 3:
+        <br>The successive-comparison-type register functions as memory and stores the comparator output result in a high-order bit. First, this is stored only in B2, for which the most significant bit is “1”; that is, the D/A converter inputs 100(2) and the comparator input in Step 2 becomes 4 V.
+        As shown in Step 2, the comparator compares the 4 V output by the D/A converter with the analog input of 6 V, which requires conversion. Hence, because 6 V is larger than 4 V, B2 stores “1”.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Step 4:
+        <br>From the result of Step 3, B2 stores “1” and the next bit, B1, becomes “1”; that is, the D/A converter inputs 100(2). This is why the input to the comparator becomes 6 V. When this value is compared to 6 V, as in Step 3, B1 stores “1” for equal analog input.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Step 5:
+        <br>Finally, B2 = 1 and B1 = 1 are realized, and the least significant bit, B0, becomes “1”. Thus, the D/A converter inputs 111(2). As a result, the input to the comparator becomes 7 V. When this value is compared to the 6-V analog input, as in Step 3, the D/A converter output is found to be larger than 6V. Hence, B0 stores “0”.
+        <br>In this way, the successive-comparison-type converter outputs a digital value using a bit-by-bit comparison, beginning with the most significant bit, against the sample-held analog signal. Although the successive-comparison-type A/D converter has a low conversion rate, it is possible to realize high cost efficiency, because the circuit is miniature and power consumption is, therefore, reduced.
+        <br>A D/A converter is used in successive-comparison-type converters, as shown in Figure 3. Although the D/A converter exists only when the A/D converter is established, there is no such precedent that introduces digitization into DNA molecule circuits. If we adopt a successive-comparison-type A/D converter, we must design a new A/D converter using another method, and must also design a D/A converter.
+        </p>
+    </div>
+    
+    
+    <div class="top_bar">
+        <h3>(iii) Parallel-Comparison-Type A/D converter</h3>
+    </div>
+    <div class="text_temp">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The parallel-comparison-type A/D converter is based on the characteristics of a parallel circuit. This converter digitizes an analog input at one instant by comparing V<sub><small>ref</sub></small> against V<sub><small>in</sub></small>, which enters all comparators simultaneously. Figure 4 shows a 3-bit parallel-comparison-type A/D converter, which digitizes a 4-bit analog input. Additionally, Figure 5 shows the structure of an encoder.
+        </p>
+    </div>
+
+    <div class="center_fig_middle">
+        <img src="common/img/index5/Figure4.png" width="500" height="402" alt="" />
+    </div>
+    <div class="title_center2">Figure 4: Parallel-Comparison-Type A/D converter</div>
+    
+    <div class="center_fig_middle">
+        <img src="common/img/index5/Figure5.png" width="410" height="310" alt="" />
+    </div>
+    <div class="title_center">Figure 5: Encoder</div>
+    
+    <div class="text_temp">
+        <p>Step 1:
+        <br>We assume that n is the number of bits, and the analog input V<sub><small>in</sub></small> that we wish to digitize enters all 2<sup><small>(n-1)</small></sup> comparators simultaneously. In the case shown in Figure 4, we must prepare seven comparators for digital conversion, because the number of output bits is three (X<sub><small>2</sub></small>, X<sub><small>1</sub></small>, X<sub><small>0</sub></small>).
+        </p>
+    </div>
+    
+    <div class="text_temp">
+        <p>Step 2:
+        <br>Each comparator discriminates between the values using a magnitude correlation,  comparing the analog input V<sub><small>in</sub></small> value against the V<sub><small>ref</sub></small> value. If the value of V<sub><small>in</sub></small> is larger than that of V<sub><small>ref</sub></small>, the output becomes “1”. Otherwise “0” is obtained.
+        </p>
+    </div>
+    
+    <div class="text_temp">
+        <p>Step 3:
+        <br>The A/D converter examines the “1”-“0” threshold obtained from Step 2 using a NOT and AND gate. We find that the threshold is A<sub><small>4</sub></small>, which is set to “1” in this instance, because V<sub><small>in</sub></small> is 4 V.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Step 4:
+        <br>The A/D converter converts data into binary digits on the basis of the data stored in the threshold gate obtained from Step 3, using the encoder, which consists of an OR circuit.
+        <br><br>Parallel-comparison-type A/D converters tend to be large-scale circuits because the number of comparators must be increased significantly in accordance with increases in the number of bits, so as to improve the conversion accuracy. However, these converters are used to convert high-frequency analog signals such as video or pulse signals, which do not require precise digital conversion.
+        　As shown in Figures 4 and 5, the parallel-comparison-type A/D converter consists of a simple circuit that is composed of logic circuits. It is difficult to increase the resolution without enlarging the scale of the circuit; however, this converter exhibits rapid conversion. Therefore, we conclude that the parallel-comparison-type A/D converter is suitable for replication by a reaction based on DNA molecules. We realize this parallel-comparison-type A/D converter using a combination of DNA logic circuits.
+        </p>
+    </div>
+    <div class="top_bar">
+        <h1>・Supplement</h1>
+    </div>
+    <div class="text_temp">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Digital etymology is derived from the Latin word "digitus" (finger), and means counting using fingers. Digital data are values represented by discrete values, whereas analog data consists of continuous quantities. We can imagine that digital etymology has good affinity with computing, as digital information may be represented by numbers such as “0” or “1”. However, analog quantities must be converted into strictly digital information for processing via computer, because analog data consists of vague values as a result of its continuous nature. We can understand analog data intuitively, however, digital data is suitable for computer processing for various reasons such as ease of information transmission. As a familiar comparison, records and cassette tapes are based on analog information, while digital information is used in compact disc (CD) technology.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Analog Information
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here, we consider a case where a sound is recorded as analog information that varies continuously. To use the above example, records and cassettes are based on technology that directly records sound waves. These sound waves are carved into the records and preserved in unchanged form.
+        </p>
+    </div>
+    <div class="center_fig_middle">
+        <img src="common/img/index5/sup1.jpg" width="450" height="254" alt="" />
+    </div>
+    
+    <div class="text_temp">
+        <br>Cassette tapes utilize a mechanism that stores the shape of the sound wave using magnetic tape.
+        </p>
+    </div>
+    <div class="center_fig_middle">
+        <img src="common/img/index5/sup2.jpg" width="450" height="254" alt="" />
+    </div>
+    
+    <div class="text_temp">
+        <p>We may assume that an analog system that simply records original sounds with 100% accuracy and then reproduces these sounds is superior to a digital system. However, analog systems have a significant weakness in the form of deterioration of information. In these systems, sounds are preserved on a recording medium such as a disk or magnetic tape; however, the quality of this recording medium changes over time. Therefore, digital technology is necessary.
+        </p>
+    </div>
+    <div class="text_temp">
+        <p>Digital Information
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What does it mean to convert analog data on a sound into digital data? Although a digital data-point can be expressed using a number such as “1”, “2”, or “3”, the sound data can be represented using just two numbers: “0” or “1”. Although we may think that two numerical values such as “0” and “1” can represent only two pieces of information, by increasing the number of digits to yield values such as “10110011”, it is possible to increase the range of data-points that can be represented.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Representative examples of digital-technology-based music and video recordings are the sounds produced by digital audio players such as CD, DVD, and Blu-ray players, and iPods. Further, if digital information is recorded in "Yes or No" format, we can easily correct for missing sound data in the analog information. Music CDs have a mechanism through which sound is reproduced using numerical values, whereas records record sound in a waveform structure. For example, consider the following analog waveform.
+        </p>
+    </div>
+    <div class="center_fig_middle">
+        <img src="common/img/index5/sup3.png" width="400" height="322" alt="" />
+    </div>
+    
+    <div class="text_temp">
+        <p>Firstly, the magnitudes of the sound’s amplitudes at constant time intervals are recorded as numbers in the digitization process (the vertical and horizontal axes are amplitude and time, respectively).
+        </p>
+    </div>
+    <div class="center_fig_middle">
+        <img src="common/img/index5/sup4.png" width="400" height="366" alt="" />
+    </div>
+    
+    <div class="text_temp">
+        <p>As regards recording frequency, the information is recorded at a frequency of 44,100 times per second in the case of a CD. Secondly, the amplitude magnitudes are quantified, as shown below.
+        </p>
+    </div>
+    
+    <div class="center_fig_middle">
+        <img src="common/img/index5/sup5.png" width="400" height="366" alt="" />
+    </div>
+    
+    <div class="text_temp">
+        <p>In the above figure, the information is digitized as "1, 2, 3, 4, 3, 1, -3, -5, -7, -3, 4, 3, 2, 1". An important aspect of the digitization process is that rounded-down values are recorded. In other words, a numerical value such as "12.3456" is recorded as "12.3". In the case of music CD, "16-bit" information is obtained; this indicates the number of quantization bits. Finally, numerical values are expressed in terms of two numerical values only, "0” or “1”, and the final results are recorded.
+        </p>
+    </div>
+    
+    <div class="center_fig">
+        <img src="common/img/index5/sup6.png" width="604" height="201" alt="" />
+    </div>
+    
+    <div class="text_temp">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information composed of a series of “0” or “1” data-points can be obtained in this way, and can then be processed by a computer.
+        The above flow for analog information processing via computer is called A/D conversion.
+        </p>
+    </div>
+    
+    
+</div><!-- /#mainContent -->
+
+<div id="sidebar">
+    
+    <div class="side_fig">
+        <img src="common/img/sample_logo.png" width="200" height="30" alt="" />
+    </div>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Project</a></li>
+            <li><a href="index2.html">Design</a></li>
+            <li><a href="index3.html">Dry Experiment</a></li>
+            <li><a href="index3_2.html">Art of modeling</a></li>
+            <li><a href="index4.html">Team members</a></li>
+            <li class="here"><a href="index5.html">Supplement</a></li>
+        </ul>
+    </nav>
+    
+    
+    
+</div><!-- /#sidebar -->
+
+</div><!-- /#wrapper -->
+
+<footer class="demo-footer" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-6">
+                <p><strong><a href="index.html">Project</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <p><strong><a href="index2.html">Design</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <p><strong><a href="index3.html">Dry Experiment</a></strong></p>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <p><strong><a href="index3_2.html">Art of modeling</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="#" class="list-group-item">Reaction rate<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="#" class="list-group-item">Differential equation<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="#" class="list-group-item">Source code<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <p><strong><a href="index4.html">Team members</a></strong></p>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <p><strong><a href="index5.html">Supplement</a></strong></p>
+            </div>
+            
+            
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</footer><!-- /#footer -->
+</body>
+</html>
