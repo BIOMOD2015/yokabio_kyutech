@@ -35,15 +35,18 @@
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A double-integral A/D converter converts analog information into digital data by counting clock signals (Figure 1). The A/D conversion is performed according to the following steps.</p>
         </div>
         
-        <div class="center_fig">
+        <div class="center_fig1">
             <img src="common/img/index5/Figure1_final.png" width="651" height="404" alt="" />
         </div>
-        <div class="title_center">Figure 1: Double-Integral Type A/D converter</div>        
-    </main>
-    
+        <div class="title_center">Figure 1: Double-Integral Type A/D converter</div>
+        
+        <div class="center_fig1">
+            <img src="common/img/index5/Figure2_supplement.png" width="650" height="578" alt="" />
+        </div>
+        <div class="title_center">Figure 2: Output of each element at time(t)</div>
     <div class="text_temp">
         <p>Step 1:
-        <br>First, the switch on the input voltage (V<sub><small>in</sub></small>) side of the analog input is turned on, and the resultant V<sub><small>in</sub></small> is integrated for a set time t0. After t0 has elapsed, the V<sub><small>in</sub></small> is switched to the reference voltage (V<sub><small>ref</sub></small>) side, and V<sub><small>ref</sub></small> is integrated by an integrator for a period of time ti. Then, the output gradient from the integrator becomes negative, and the output decreases. This occurs because V<sub><small>ref</sub></small> has opposite sign to the analog V<sub><small>in</sub></small>.
+        <br>First, the switch on the input voltage (V<sub><small>in</sub></small>) side of the analog input is turned on, and the resultant V<sub><small>in</sub></small> is integrated for a set time t<sub><small>0</sub></small>. After t<sub><small>0</sub></small> has elapsed, the V<sub><small>in</sub></small> is switched to the reference voltage (V<sub><small>ref</sub></small>) side, and V<sub><small>ref</sub></small> is integrated by an integrator for a period of time t<sub><small>1</sub></small>. Then, the output gradient from the integrator becomes negative, and the output decreases. This occurs because V<sub><small>ref</sub></small> has opposite sign to the analog V<sub><small>in</sub></small>.
         </p>
     </div>
     <div class="text_temp">
@@ -53,19 +56,21 @@
     </div>
     <div class="text_temp">
         <p>Step 3:
-        <br>The control logic activates the switch in Step 1, and gives the order to reset the counter and to open the gate.
+        <br>The control system activates the switch in Step 1, and gives the order to reset the counter and to open the AND gate.
         </p>
     </div>
     <div class="text_temp">
         <p>Step 4:
-        <br>When the gate opens, the counter begins counting the number of clock signals.
+        <br>When the AND gate opens, the counter begins counting the number of clock signals.
         </p>
     </div>
     <div class="text_temp">
         <p>Step 5:
-        <br>When the output value obtained by the comparator in Step 2 changes from “0” to “1”, the control logic gives the order to close the gate, and the counter stops.
+        <br>When the output value obtained by the comparator in Step 2 changes from “0” to “1”, the control system gives the order to close the AND gate, and the counter stops.
+        <br>
         <br> As mentioned above, the analog voltage is converted to a digital value based on the number of counted clock signals. The conversion rate of the double-integral A/D converter is relatively slow; however, this device is used for voltmeters outputting digital values, because it has high resolution and sensitivity.
-        In an integrator, an integrated circuit (IC) element called an operational amplifier is used, which amplifies an analog signal. As shown in Figure 1, an operational amplifier has two inputs: V+ (non-inverted input terminal) and V- (inverted input terminal). Further, it can determine the output voltage such that the difference in potential between the two input voltages becomes 0 V. Although subtraction processing is necessary in order to measure the potential difference between the two inputs, it is very difficult to design a subtraction process in a reaction scheme using DNA molecules. Therefore, at present, we are unable to realize a double-integral A/D converter using DNA molecules. Nonetheless, the possibility to design an integrator using DNA exists. This is therefore an opportunity to implement an A/D converter, because subtraction processing can be defined using the two’s complement operation, which is one of the advantages of digitization.
+       
+       <br><br>In an integrator, an integrated circuit (IC) element called an operational amplifier is used, which amplifies an analog signal. As shown in Figure 1, an operational amplifier has two inputs: V+ (non-inverted input terminal) and V- (inverted input terminal). Further, it can determine the output voltage such that the difference in potential between the two input voltages becomes 0 V. Although subtraction processing is necessary in order to measure the potential difference between the two inputs, it is very difficult to design a subtraction process in a reaction scheme using DNA molecules. Therefore, at present, we are unable to realize a double-integral A/D converter using DNA molecules. Nonetheless, the possibility to design an integrator using DNA exists. This is therefore an opportunity to implement an A/D converter, because subtraction processing can be defined using the two’s complement operation, which is one of the advantages of digitization.
         </p>
     </div>
     
@@ -112,7 +117,7 @@
     <div class="text_temp">
         <p>Step 5:
         <br>Finally, B2 = 1 and B1 = 1 are realized, and the least significant bit, B0, becomes “1”. Thus, the D/A converter inputs 111(2). As a result, the input to the comparator becomes 7 V. When this value is compared to the 6-V analog input, as in Step 3, the D/A converter output is found to be larger than 6V. Hence, B0 stores “0”.
-        <br>In this way, the successive-comparison-type converter outputs a digital value using a bit-by-bit comparison, beginning with the most significant bit, against the sample-held analog signal. Although the successive-comparison-type A/D converter has a low conversion rate, it is possible to realize high cost efficiency, because the circuit is miniature and power consumption is, therefore, reduced.
+        <br><br>In this way, the successive-comparison-type converter outputs a digital value using a bit-by-bit comparison, beginning with the most significant bit, against the sample-held analog signal. Although the successive-comparison-type A/D converter has a low conversion rate, it is possible to realize high cost efficiency, because the circuit is miniature and power consumption is, therefore, reduced.
         <br>A D/A converter is used in successive-comparison-type converters, as shown in Figure 3. Although the D/A converter exists only when the A/D converter is established, there is no such precedent that introduces digitization into DNA molecule circuits. If we adopt a successive-comparison-type A/D converter, we must design a new A/D converter using another method, and must also design a D/A converter.
         </p>
     </div>
@@ -157,7 +162,7 @@
         <p>Step 4:
         <br>The A/D converter converts data into binary digits on the basis of the data stored in the threshold gate obtained from Step 3, using the encoder, which consists of an OR circuit.
         <br><br>Parallel-comparison-type A/D converters tend to be large-scale circuits because the number of comparators must be increased significantly in accordance with increases in the number of bits, so as to improve the conversion accuracy. However, these converters are used to convert high-frequency analog signals such as video or pulse signals, which do not require precise digital conversion.
-        　As shown in Figures 4 and 5, the parallel-comparison-type A/D converter consists of a simple circuit that is composed of logic circuits. It is difficult to increase the resolution without enlarging the scale of the circuit; however, this converter exhibits rapid conversion. Therefore, we conclude that the parallel-comparison-type A/D converter is suitable for replication by a reaction based on DNA molecules. We realize this parallel-comparison-type A/D converter using a combination of DNA logic circuits.
+        　<br><br>As shown in Figures 4 and 5, the parallel-comparison-type A/D converter consists of a simple circuit that is composed of logic circuits. It is difficult to increase the resolution without enlarging the scale of the circuit; however, this converter exhibits rapid conversion. Therefore, we conclude that the parallel-comparison-type A/D converter is suitable for replication by a reaction based on DNA molecules. We realize this parallel-comparison-type A/D converter using a combination of DNA logic circuits.
         </p>
     </div>
     <br>
@@ -232,13 +237,13 @@
         </p>
     </div>
     
-    
+ </main>
 </div><!-- /#mainContent -->
 
 <div id="sidebar">
     
     <div class="side_fig">
-        <img src="common/img/sample_logo.png" width="200" height="30" alt="" />
+        <img src="common/img/logo/kyutech_study_logo.png" width="154" height="80" alt="" />
     </div>
     
     <nav>
@@ -246,7 +251,8 @@
             <li><a href="index.html">Project</a></li>
             <li><a href="index2.html">Design</a></li>
             <li><a href="index3.html">Dry Experiment</a></li>
-            <li><a href="index3_2.html">Art of modeling</a></li>
+            <li><a href="index3_2.html">Wet Experiment</a></li>
+            <li><a href="index3_3.html">Art of modeling</a></li>
             <li><a href="index4.html">Team members</a></li>
             <li class="here"><a href="index5.html">Supplement</a></li>
         </ul>
@@ -279,17 +285,15 @@
                 <p><strong><a href="index3.html">Dry Experiment</a></strong></p>
             </div>
             <div class="col-md-2 col-sm-6">
-                <p><strong><a href="index3_2.html">Art of modeling</a></strong></p>
-                <div class="list-group margin-top-sm">
-                    <a href="#" class="list-group-item">Reaction rate<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Differential equation<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Source code<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                </div>
+                <p><strong><a href="index3_2.html">Wet Experiment</a></strong></p>
             </div>
+            <div class="col-md-2 col-sm-6">
+                <p><strong><a href="index3_3.html">Art of modeling</a></strong></p>
+            </div>
+            
+            
             <div class="col-md-2 col-sm-6">
                 <p><strong><a href="index4.html">Team members</a></strong></p>
-            </div>
-            <div class="col-md-2 col-sm-6">
                 <p><strong><a href="index5.html">Supplement</a></strong></p>
             </div>
             
