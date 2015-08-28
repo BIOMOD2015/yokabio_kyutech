@@ -23,41 +23,71 @@
         
         
         <div class="text_temp">
-			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here, we set the length of a base sequence of DNA to 15 nucleotide (nt) to ensure stable hybridization of DNA molecules. Further, we set the length of the toehold domain to 5 nt to ensure fast release of strand displacement products via DNA hybridization. These nucleotide lengths are sufficiently long to perform strand displacement reactions effectively. All the toehold domains used for the A/D converter we design here are common. We simulate the activity of the A/D converter using MATLAB in Figure 1 and change the input values within the 0.0−0.7 range. The A/D data results for the MATLAB simulation based on Table 1.</p>
+			<p>Here, we set the length of a base sequence of DNA to 15 nucleotide (nt) to ensure stable hybridization of DNA molecules. Further, we set the length of the toehold domain to 5 nt to ensure fast release of strand displacement products via DNA hybridization. These nucleotide lengths are sufficiently long to perform strand displacement reactions effectively. All the toehold domains used for the A/D converter we design here are common. We simulate the activity of the A/D converter using MATLAB in Figure 1 and change the input values within the 0.0−0.7 range. The A/D data results for the MATLAB simulation based on Table 1.</p>
             </div>
             
-            <div class="text_temp">
+            <div class="text_temp_table1">
             <p>Table 1: Analog and digit value correspond table</p>
         </div>
-            <div class="center_fig">
+            <div class="center_fig_table">
 			<img src="common/img/Table1.png"alt="left" width="450" height="300">
 		</div>
             <BR>
         <BR>
-        <div class="center_fig">
+        	
+        <div class="text_temp">
+            <p>Analog Input concentrarion : 0.6nM, <BR>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The expected Digital output : High(left panel) & High(middle panel) & High(right panel)
+            </p>
+        </div>
+		<div class="center_fig">
 			<img src="common/img/AD/111/111_X2.png"alt="left" width="260" height="220"> <img src="common/img/AD/111/111_X1.png"alt="center" width="260" height="220"> <img src="common/img/AD/111/111_X0.png"alt="right" width="260" height="220">
 		</div>
-		
-			<div class="center_fig">
+		<div class="text_temp">
+            <p>Analog Input concentrarion : 0.5nM, <BR>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The expected Digital output : High(left panel) & High(middle panel) & High(right panel)
+            </p>
+        </div>
+		<div class="center_fig">
 			<img src="common/img/AD/110/110_X2.png"alt="left" width="260" height="220"> <img src="common/img/AD/110/110_X1.png"alt="center" width="260" height="220"> <img src="common/img/AD/110/110_X0.png"alt="right" width="260" height="220">
 		</div>
-		
+		<div class="text_temp">
+            <p>Analog Input concentrarion : 0.4nM, <BR>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The expected Digital output : High(left panel) & High(middle panel) & High(right panel)
+            </p>
+        </div>
 			<div class="center_fig">
 			<img src="common/img/AD/101/101_X2.png"alt="left" width="260" height="220"> <img src="common/img/AD/101/101_X1.png"alt="left" width="260" height="220"> <img src="common/img/AD/101/101_X0.png"alt="left" width="260" height="220">
 		</div>
-		
+		<div class="text_temp">
+            <p>Analog Input concentrarion : 0.3nM, <BR>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The expected Digital output : High(left panel) & High(middle panel) & High(right panel)
+            </p>
+        </div>
 			<div class="center_fig">
 			<img src="common/img/AD/100/100_X2.png"alt="left" width="260" height="220"> <img src="common/img/AD/100/100_X1.png"alt="left" width="260" height="220"> <img src="common/img/AD/100/100_X0.png"alt="left" width="260" height="220">
 		</div>
-		
+		<div class="text_temp">
+            <p>Analog Input concentrarion : 0.2nM, <BR>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The expected Digital output : High(left panel) & High(middle panel) & High(right panel)
+            </p>
+        </div>
 			<div class="center_fig">
 			<img src="common/img/AD/011/011_X2.png"alt="left" width="260" height="220"> <img src="common/img/AD/011/011_X1.png"alt="left" width="260" height="220"> <img src="common/img/AD/011/011_X0.png"alt="left" width="260" height="220">
 		</div>
-		
+		<div class="text_temp">
+            <p>Analog Input concentrarion : 0.1nM, <BR>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The expected Digital output : High(left panel) & High(middle panel) & High(right panel)
+            </p>
+        </div>
 			<div class="center_fig">
 			<img src="common/img/AD/010/010_X2.png"alt="left" width="260" height="220"> <img src="common/img/AD/010/010_X1.png"alt="left" width="260" height="220"> <img src="common/img/AD/010/010_X0.png"alt="left" width="260" height="220">
 		</div>
-		
+		<div class="text_temp">
+            <p>Analog Input concentrarion : 0.0nM, <BR>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The expected Digital output : High(left panel) & High(middle panel) & High(right panel)
+            </p>
+        </div>
 			<div class="center_fig">
 			<img src="common/img/AD/001/001_X2.png"alt="left" width="260" height="220"> <img src="common/img/AD/001/001_X1.png"alt="left" width="260" height="220"> <img src="common/img/AD/001/001_X0.png"alt="left" width="260" height="220">
 		</div>
@@ -180,16 +210,22 @@
 			<br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, we consider a comparison with a sample hold circuit for an A/D converter in the microcomputer-related field of mechatronics. It is possible to prevent a situation in which an input voltage changes (breaks up) during a conversion, causing a change in the output result, by using a sample hold circuit in the A/D converter. Hence, the voltage is maintained at a fixed value when the input voltage is dispersed. However, the A/D converter with sample hold circuit is an example of a successive-approximation-register (SAR) device. Here, we implement a parallel-comparator-type A/D converter, which does not required a sample hold circuit and does not use a 2n-1 comparator in order to represent an input as an n-bit output.
 As regards SAR implementation, it is difficult to design a structure that maintains the voltage like a condenser in a microcomputer using DNA-based controls. In fact, it is extremely difficult to realize a sample hold circuit using DNA. In the case of SAR implementation, sample hold circuits become a key factor. If we cannot design a condenser-like structure, we should implement a parallel comparator A/D converter.
 
+
             </p>
         </div>
-        
+
+    
     </main>
+    
+    <div class="download_zip">
+    <a href="Source_program.zip">Please click here to download.</a>
+    </div>
     
 </div><!-- /#mainContent -->
 <div id="sidebar">
     
     <div class="side_fig">
-        <img src="common/img/sample_logo.png" width="200" height="30" alt="" />
+        <img src="common/img/logo/kyutech_study_logo.png" width="154" height="80" alt="" />
     </div>
     
     <nav>
@@ -197,7 +233,8 @@ As regards SAR implementation, it is difficult to design a structure that mainta
             <li><a href="index.html">Project</a></li>
             <li><a href="index2.html">Design</a></li>
             <li class="here"><a href="index3.html">Dry Experiment</a></li>
-            <li><a href="index3_2.html">Art of modeling</a></li>
+            <li><a href="index3_2.html">Wet Experiment</a></li>
+            <li><a href="index3_3.html">Art of modeling</a></li>
             <li><a href="index4.html">Team members</a></li>
             <li><a href="index5.html">Supplement</a></li>
         </ul>
@@ -230,17 +267,15 @@ As regards SAR implementation, it is difficult to design a structure that mainta
                 <p><strong><a href="index3.html">Dry Experiment</a></strong></p>
             </div>
             <div class="col-md-2 col-sm-6">
-                <p><strong><a href="index3_2.html">Art of modeling</a></strong></p>
-                <div class="list-group margin-top-sm">
-                    <a href="#" class="list-group-item">Reaction rate<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Differential equation<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                    <a href="#" class="list-group-item">Source code<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
-                </div>
+                <p><strong><a href="index3_2.html">Wet Experiment</a></strong></p>
             </div>
+            <div class="col-md-2 col-sm-6">
+                <p><strong><a href="index3_3.html">Art of modeling</a></strong></p>
+            </div>
+            
+            
             <div class="col-md-2 col-sm-6">
                 <p><strong><a href="index4.html">Team members</a></strong></p>
-            </div>
-            <div class="col-md-2 col-sm-6">
                 <p><strong><a href="index5.html">Supplement</a></strong></p>
             </div>
             

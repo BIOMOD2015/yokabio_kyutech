@@ -90,8 +90,11 @@ nav ul li a,
 nav ul li span {
     display:block;
     width:200px;
-    height:35px;
+    /* 変更点-----------------------------------------*/
+    height:32px;
     padding:5px 0 0 20px;
+    /* 変更点-----------------------------------------*/
+    font-size: 16px;
     line-height:1.6em;
     text-decoration:none;
     color:#696969;
@@ -108,7 +111,7 @@ nav ul li.here > span {
     color: #FFF;
 }
 .side_fig{
-    margin:50px 0px 50px 0px;
+    margin:10px 0px 40px 0px;
 }
 
 /*footer
@@ -196,6 +199,9 @@ nav ul li.here > span {
 }
 .center_fig{
      margin:10px 0 10px 30px;
+}
+.center_fig1{
+    margin:10px 0 10px 120px;
 }
 .title_center{
     font-size:16px;
