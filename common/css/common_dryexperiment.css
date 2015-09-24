@@ -216,6 +216,11 @@ nav ul li.here > span {
 .center_fig_table{
 	margin:10px 0 10px 200px;
 }
+
+.center_fig_table23{
+	margin:10px 0 10px 100px;
+}
+
 .text_temp_table1 {
      font-family:'Times New Roman';
      margin:10px 20px 10px 270px;
@@ -225,6 +230,27 @@ nav ul li.here > span {
     padding-bottom:0px;
     Color:#000;
 }
+
+.text_temp_table24 {
+     font-family:'Times New Roman';
+     margin:10px 20px 10px 300px;
+    font-size:16px;
+    line-height:1.6em;
+    padding-top:8px;
+    padding-bottom:0px;
+    Color:#000;
+}
+
+.text_temp_table23 {
+     font-family:'Times New Roman';
+     margin:10px 20px 10px 250px;
+    font-size:16px;
+    line-height:1.6em;
+    padding-top:8px;
+    padding-bottom:0px;
+    Color:#000;
+}
+
 .download_zip{
     font-family:'Times New Roman';
     margin:10px 20px 10px 270px;
