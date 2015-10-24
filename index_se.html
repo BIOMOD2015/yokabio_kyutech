@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>BIOMOD2015</title>
+<link rel="stylesheet" href="common/css/common_design.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body id="top" class="top">
+
+
+<div id="wrapper">
+    
+<div id="mainContent">
+    
+    <main>
+  
+        
+        <div class="top_bar">
+            <h1>1. Image of Visual DSD</h1>
+        </div>
+    
+        <div class="text_temp">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We used Visual DSD and NUPACK in designing DNA sequences for our wet experiments.
+            <br> Visual DSD is a software which simulates and analyzes DNA strand displacement reactions, and can be utilized as a programing language for a computer-aided design of DNA circuits. With this language, some basic elements such as sequence domains, toeholds, and branch migration are defined, and automatically connected according to their complementation through the compile process. In other words, we can easily create a DNA reaction system by just preparing single- and double-stranded DNAs. In simulating the DNA circuit designed, deterministic or stochastic simulator is available to the designer’s needs in which the former solves an ordinary differential equations of the system, and the latter provides a possible trajectory of the system. It should be noted that Visual DSD can not deal with any DNA secondary structure.
+        </div>
+    
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure1.png" width="700" height="319" alt="" />
+        </div>
+        
+         <div class="title_center">Figure&nbsp;1.&nbsp;Flow chart to Wet experiment</div>
+         
+        <div class="text_temp">
+            <p>First, we have accomplished the operation check of the three-bit A/D converter in numerical simulation with MATLAB. Second, by using Visual DSD, we have confirmed whether the three-bit A/D converter is feasible in wet experiments. At the same time, this step provides a clue to appropriately design base sequences to be needed in wet experiments. Therefore, simulations in Visual DSD is an important process that connects between numerical simulations and wet experiments. ossible trajectory of the system. It should be noted that Visual DSD can not deal with any DNA secondary structure.
+        </div>
+        
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure2.png" width="700" height="451" alt="" />
+        </div>
+        
+        <div class="title_center">Figure&nbsp;2.&nbsp;1 bit A/D converter</div>
+        <div class="text_temp">
+            <p>Wet experiments as a verification study should be simply designed. In our case, the essential element of the three-bit A/D converter can be checked by using one-bit A/D converter because three-bit A/D converter can be straightforward made by combining “three” one-bit A/D converters. Figure 2 shows the schematic of one-bit A/D converter in which the system is comprised of four kinds of DNA gates (Threshold, NOT, AND, and OR gates). After preparing all of the gates in Visual DSD, they are integrated into a whole system.
+        </div>
+        <div class="text_temp">
+            <p>The following Table shows the truth table of the one-bit A/D converter to be checked.
+        </div>
+        
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Table_data.png" width="700" height="377" alt="" />
+        </div>
+        <div class="text_temp">
+            <p>In what follows, we summarize the stochastic simulation results of the one-bit A/D converter with Visual DSD in which
+        </div>
+        <div class="text_temp">
+            <p>i)The threshold for determining “high” or ”low” is set to 0.5 nM, and we show the threshold value as black line. This means, the output from each gate is defined as high when it exceed the black line. Conversely, we defined outputs of less than black line, as low.
+        </div>
+        
+        <div class="text_temp">
+            <p>ⅱ)The output from each gate is labeled and colored as follows:
+        </div>
+        <div class="text_temp">
+            <p> output from gate2 of Threshold gate (<font color="blue">blue line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s4 T s2＞
+            　  <BR>output from gate4 of NOT gate（<font color="green">green line</font>）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s8 T s2＞
+                <BR>output from gate6 of NOT gate (<font color="red">red line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s21 T s6＞
+            　  <BR>output from gate14 of AND gate1 (<font color="#ffcc00">yellow line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s14＞
+            　  <BR>output from gate22 of AND gate2 (<font color="orange">orange line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s22＞
+            　<BR>output from gate24 of OR gate (<font color="purple">purple line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s26 T s24＞
+        </div>
+        
+        <div class="text_temp">
+            <p>First of all, we show the simulation results for simple threshold gate in Figure 3.
+        </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/DSD_NUPACK/Figure3_1(0.2nM).png" alt="" width="370" height="239"></p>
+                
+                </div>
+        
+        <div class="gazo-box2">
+            <p><img src="common/img/DSD_NUPACK/Figure3_2(0.8nM).png" alt="" width="370" height="239"></p>
+                </div>
+        <div class="title_center2">
+            <p>Figure 3: Simulation results for simple threshold gate and input concentrations of 0.8 nM(left),input concentration of 0.2nM(right).
+            </p>
+        </div>
+        
+        <div class="text_temp">
+            <p>As show in Figure 3, we confirmed the validity of simple threshold gate.
+            Next, we simulated one-bit A/D converter.
+        </div>
+       
+        
+        <div class="text_temp">
+            <p>1) Input,Input2,Input3 … 1 1 1
+            <BR>(<font color="blue">blue line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s4 T s2＞… high
+            <BR>(<font color="green">green line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s8 T s2＞… high
+            <BR>(<font color="red">red line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s21 T s6＞… low
+            <BR>(<font color="#ffcc00">yellow line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s14＞… high
+            <BR>(<font color="orange">orange line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s22＞… low
+            <BR>(<font color="purple">purple line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s26 T s24＞… high
+        </div>
+        
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure3(111_result).png" width="700" height="452" alt="" />
+        </div>
+        <br>
+        
+        <div class="text_temp">
+            <p>2) Input,Input2,Input3 … 1 1 0
+            <BR>(<font color="blue">blue line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s4 T s2＞… high
+            <BR>(<font color="green">green line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s8 T s2＞… high
+            <BR>(<font color="red">red line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s21 T s6＞… low
+            <BR>(<font color="#ffcc00">yellow line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s14＞… high
+            <BR>(<font color="orange">orange line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s22＞… low
+            <BR>(<font color="purple">purple line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s26 T s24＞… high
+        </div>
+        
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure4(110_result).png" width="700" height="452" alt="" />
+        </div>
+        <br>
+        
+        <div class="text_temp">
+            <p>3) Input,Input2,Input3 … 1 0 1
+            <BR>(<font color="blue">blue line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s4 T s2＞… high
+            <BR>(<font color="green">green line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s8 T s2＞… high
+            <BR>(<font color="red">red line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s21 T s6＞… low
+            <BR>(<font color="#ffcc00">yellow line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s14＞… low
+            <BR>(<font color="orange">orange line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s22＞… low
+            <BR>(<font color="purple">purple line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s26 T s24＞… low
+        </div>
+
+        
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure5(101_result).png" width="700" height="452" alt="" />
+        </div>
+        <br>
+        
+        <div class="text_temp">
+            <p>4) Input,Input2,Input3 … 1 0 0
+            <BR>(<font color="blue">blue line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s4 T s2＞… high
+            <BR>(<font color="green">green line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s8 T s2＞… high
+            <BR>(<font color="red">red line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s21 T s6＞… low
+            <BR>(<font color="#ffcc00">yellow line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s14＞… low
+            <BR>(<font color="orange">orange line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s22＞… low
+            <BR>(<font color="purple">purple line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s26 T s24＞… low
+        </div>
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure6(100_result).png" width="700" height="452" alt="" />
+        </div>
+        <br>
+        
+        <div class="text_temp">
+            <p>5) Input,Input2,Input3 … 0 1 1
+            <BR>(<font color="blue">blue line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s4 T s2＞… low
+            <BR>(<font color="green">green line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s8 T s2＞… low
+            <BR>(<font color="red">red line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s21 T s6＞… high
+            <BR>(<font color="#ffcc00">yellow line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s14＞… low
+            <BR>(<font color="orange">orange line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s22＞… high
+            <BR>(<font color="purple">purple line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s26 T s24＞… high
+        </div>
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure7(011_result).png" width="700" height="452" alt="" />
+        </div>
+        <br>
+        
+        <div class="text_temp">
+            <p>6) Input,Input2,Input3 … 0 1 0
+            <BR>(<font color="blue">blue line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s4 T s2＞… low
+            <BR>(<font color="green">green line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s8 T s2＞… low
+            <BR>(<font color="red">red line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s21 T s6＞… high
+            <BR>(<font color="#ffcc00">yellow line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s14＞… low
+            <BR>(<font color="orange">orange line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s22＞… low
+            <BR>(<font color="purple">purple line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s26 T s24＞… low
+        </div>
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure8(010_result).png" width="700" height="452" alt="" />
+        </div>
+        
+        <br>
+        <div class="text_temp">
+            <p>7) Input,Input2,Input3 … 0 0 1
+            <BR>(<font color="blue">blue line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s4 T s2＞… low
+            <BR>(<font color="green">green line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s8 T s2＞… low
+            <BR>(<font color="red">red line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s21 T s6＞… low
+            <BR>(<font color="#ffcc00">yellow line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s14＞… low
+            <BR>(<font color="orange">orange line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s22＞… high
+            <BR>(<font color="purple">purple line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s26 T s24＞… high
+        </div>
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure9(001_result).png" width="700" height="452" alt="" />
+        </div>
+        
+        <br>
+        
+        <div class="text_temp">
+            <p>8) Input,Input2,Input3 … 0 0 0
+            <BR>(<font color="blue">blue line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s4 T s2＞… low
+            <BR>(<font color="green">green line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s8 T s2＞… low
+            <BR>(<font color="red">red line</font>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;＜s21 T s6＞… low
+            <BR>(<font color="#ffcc00">yellow line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s14＞… low
+            <BR>(<font color="orange">orange line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s24 T s22＞… low
+            <BR>(<font color="purple">purple line</font>)&nbsp;&nbsp;&nbsp;&nbsp;＜s26 T s24＞… low
+        </div>
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Figure10(000_result).png" width="700" height="452" alt="" />
+        </div>
+        <br>
+        <div class="text_temp">
+            In above simulations, a blue line, a green line and a yellow line don’t exceed the black line.
+            This is because these outputs are consumed for next gate as input by combining each gate.
+            However, we can consider the output concentration as high because we could obtain high concentration in Figure 3.
+        </div>
+        <div class="text_temp">
+           All variations of simulations are consistent with the truth table, indicating that we can expect that the one-bit A/D converter would be feasible in wet experiments. Then, the next step is to design the sequence for each of single- and double-stranded DNAs.
+        </div>
+        <div class="text_temp">
+           The source code used in the simulation is downloadable here.
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="common/img/DSD_NUPACK/Visual_DSD(source-cord).txt">
+           <font size="3" >Visual_DSD(source-cord).txt</font>
+        </a>
+        
+        <div class="top_bar">
+            <h1>2. NUPACK</h1>
+        </div>
+        <div class="text_temp">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We design the DNA sequences by using NUPACK, and evaluate their secondary structures at a room temperature.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigureX shows the schematic of Threshold gate. It needs four kinds of DNA strands (Input, Threshold, Gate:output, Fuel). Because NUPACK cannot deal with a double-strand DNA, Threshold and Gate:output are evaluated dividing them into two single-stranded DNAs in which each domain is labeled as follows:
+
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S1=15, S1*=3, S2=15, S2*=15, T1=5, T1*=5, T2=5, T2*=5
+            <br>We checked the secondary structures for all DNA sequences and calculated the minimum free energy of all combinations (pairs) of DNA sequences.
+
+        </div>
+        <div class="text_temp">
+            We designed DNA sequence for one-bit DNA A/D converter based on Figure 4 in Table 1.
+        </div>
+        
+        <div class="center_fig">
+            <img src="common/img/DSD_NUPACK/Nupack.png" width="700" height="491" alt="" />
+        </div>
+          <div class="title_center_table">Figure 4 : one-bit DNA A/D converter</div>
+          <br><br>
+          <div class="title_center_table2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Table1. DNA sequences for one-bit DNA A/D converter</div>
+        <div class="center_fig">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="common/img/DSD_NUPACK/Nupack4.png" width="500" height="1315" alt="" />
+        </div>
+       
+        
+    </main>
+    
+</div><!-- /#mainContent -->
+
+<div id="sidebar">
+    <nav>
+        <ul>
+            <li><a href="index.html">Project</a></li>
+            <li><a href="index2.html">Design</a></li>
+            <li><a href="index3.html">Dry Experiment</a></li>
+            <li><a href="index3_3.html">Art of modeling</a></li>
+            <li class="here"><a href="index_se.html">DNA sequence</a></li>
+            <li><a href="index3_2.html">Wet Experiment</a></li>
+            <li><a href="index4.html">Team</a></li>
+            <li><a href="index5.html">Supplement</a></li>
+        </ul>
+    </nav>
+    
+    
+        
+
+
+</div><!-- /#sidebar -->
+</div><!-- /#wrapper -->
+
+<footer class="demo-footer" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-1">
+                <p><strong><a href="index.html">Project</a></strong></p>
+                <p><strong><a href="index4.html">Team </a></strong></p>
+                <p><strong><a href="index5.html">Supplement</a></strong></p>
+            </div>
+            <div class="col-md-2 col-sm-1">
+                <p><strong><a href="index2.html">Design</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#de_2" class="list-group-item">DNA A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-1">
+                <p><strong><a href="index3.html">Dry Experiment</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#de_2" class="list-group-item">DNA A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-1">
+                <p><strong><a href="index3_3.html">Art of modeling</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#de_2" class="list-group-item">DNA A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-1">
+                <p><strong><a href="index3_2.html">DNA sequence</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#de_2" class="list-group-item">DNA A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-1">
+                <p><strong><a href="index3_2.html">Wet Experiment</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#de_2" class="list-group-item">DNA A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
+            </div>
+    
+    
+    
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</footer><!-- /#footer -->
+
+
+</body>
+</html>

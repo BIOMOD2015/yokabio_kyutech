@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>BIOMOD2015</title>
-<link rel="stylesheet" href="common/css/common_wetexperiment.css">
+<link rel="stylesheet" href="common/css/common_design.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.1/css/bootstrap.min.css">
 </head>
 
@@ -19,62 +19,293 @@
         
         
         <div class="text_temp">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the BIOMOD2015 Domestic Competition in Tokyo, we will move on to the wet experiments to experimentally verify our “design”. At the momentn the theorical and numerical studies have already been completed in “Dry experiment”. The plan regarding the experimentally part is as follows:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We divided wet experiment into two parts.
+            <br>First, we experimented resistance part in A/D converter. Next, we experimented logic gate part in A/D converter.
+            </p>
+        </div>
+        <div class="center_fig">
+            <img src="common/img/Wet_image/Figure1.png" width="700" height="258" alt="" />
         </div>
         
-       
+        <div class="title_center3">Figure 1: Dividing experiment parts in A/D converter</div>
+        
         <div class="top_bar">
-            <h1>In September </h1>
+            <h1>1. Resistance part in A/D converter </h1>
         </div>
+        
+        <div class="center_fig">
+            <img src="common/img/Wet_image/Figure2.png" width="700" height="480" alt="" />
+        </div>
+        
+        <div class="title_center3">Figure 2: Our idea of how to use Universal Strand Generator</div>
+        
+        <div class="center_fig">
+            <img src="common/img/Wet_image/Figure3.png" width="700" height="362" alt="" />
+        </div>
+        
+        <div class="title_center3">Figure 3: Difference of Team Sendai and Team YOKABIO</div>
     
         <div class="text_temp">
-            <p>
-                    i) Simulate the DNA strand displacement of DNA A/D converter we designed with “Visual DSD”.
-                <br>ii) Design the DNA base sequence with “cadnano”.
-                <br>iii) Purchase the designed oligonucleotide that we need to realize DNA A/D converter.
-                <br>iv) Prepare all equipments for experiment and learn how to use them.
-            </p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We obtained cooperation from Team Sendai and experimented Universal Strand Generator(enzyme free device) which was experimented by Team Sendai in biomod2014.
+            <br>We realized resistance part in A/D converter by using Universal Strand Generator to release outputs at different concentration.
+            Each DNA sequence is shown below.
         </div>
         
+        <div class="title_center4">Table 1: DNA sequences we used in resistance part of wet experiment</div>
+        <div class="center_fig">
+            <img src="common/img/Wet_image/Table1.png" width="700" height="965" alt="" />
+        </div>
+        <br>
+        <div class="text_temp">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   We wanted to obtain two outputs in this experiment. One is released from step1 and the other is released from step2. The simplified reaction process is shown in Figure 4.
+        </div>
+        
+        <div class="center_fig">
+            <img src="common/img/Wet_image/Figure4.png" width="700" height="945" alt="" />
+        </div>
+        
+        <div class="title_center">Figure 4: Simplified reaction process</div>
+        
         <div class="top_bar">
-            <h1>In October</h1>
+            <h2>Methods </h2>
+        </div>
+        <div class="text_temp">
+           <font size="5">Step 1</font>: We generated double-strand DNA. Each DNA was annealed by using thermal cycler (from 95 to 20℃, -1℃/min). The detail of annealing is shown below.
+        </div>
+        
+        <div class="title_center4">Table 2: The detail of annealing (* means complementary strand)</div>
+        <div class="center_fig">
+            <img src="common/img/Wet_image/Table2.png" width="700" height="197" alt="" />
+        </div>
+        <br>
+        <div class="text_temp">
+            <font size="5">Step 2</font>: First, we put transducerA, transducerB, gateA, gateB, fuelA, fuelB and trigger in tube. After that, we put input in tube. When we used inputAB as input, the outputA corresponds to output1 in Figure 4. And, when we used inputBA as input, the outputA corresponds to output2 in Figure 4.
+            In this time, we divided experiment into two patterns (pattern1 and pattern2), and measured fluorescence intensity by using spectrofluorometer(FP6200, JASCO) to confirm whether the outputA is released. The outputA includes fluorescent molecule (6-FAM).
+            <br>If you want to see detail of reaction process and role of fluorescence molecule, please see the web site of Team Sendai in biomod2014. The URL is shown below.
+
         </div>
         
         <div class="text_temp">
-            <p>Perfome the experiments!</p>
+              BIOMOD2014 Team Sendai Wiki
+                <br><a href="http://teamsendai2014.github.io/protocol.html#Electrophoresis">http://teamsendai2014.github.io/protocol.html#Electrophoresis</a>
         </div>
         
-        <div class="top_bar">
-            <h1>In Jamboree</h1>
-        </div>
         <div class="text_temp">
-            <p>
-            Provide some solid evidence at the Jamboree.
-            </p>
+            <font size="5">Pattern 1: We used inputAB</font>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OutputA is released before releasing outputB.
+            And we set transducerA concentration to 80nM to release outputA concentration of 80nM.
+            <br>Following table shows the DNA we used in pattern1 of wet experiment.
         </div>
+        
+        <div class="title_center4">Table 3: Used DNA and its concentration in pattern1</div>
+        
+       <div class="center_fig">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="common/img/Wet_image/Table3.png" width="301" height="292" alt="" />
+        </div>
+       <br>
+       <div class="text_temp">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We reacted DNA showing above and measured fluorescence intensity of outputA by using spectrofluorometer(FP6200,JASCO).
+           Figure 5 shows fluorescence intensity of outputA at wavelength 518nm.
+           We could confirm outputA is released in Figure 5. So we can say step1’s reaction of Figure 4 is functioned.
+       </div>
+       
+       <div class="center_fig">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="common/img/Wet_image/Figure5.png" width="563" height="378" alt="" />
+       </div>
+       
+       <div class="title_center2">Figure 5: Fluorescence intensity of outputA when we used InputAB. TransducerA
+           concentration is 80nM.
+       </div>
+       
+       <div class="text_temp">
+           <font size="5">Pattern 2: We used inputBA</font>
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We put above DNA and measured fluorescence intensity of outputA by using spectrofluorometer(FP6200,JASCO).
+           <br>Figure 6 shows the fluorescence intensity of outputA at wavelength 518nm.
+           We could confirm that outputA is released in Figure6. Therefore we could see that step2’s reaction of Figure 4 is achieved.
+
+       </div>
+       <div class="center_fig">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="common/img/Wet_image/Figure6.png" width="544" height="427" alt="" />
+       </div>
+       
+       <div class="title_center22">Figure 6: Fluorescence intensity of outputA when we used InputBA. TransducerA
+           concentration is 120nM.
+       </div>
+       
+       <div class="text_temp">
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In conclusion, we could confirm that fluorescence intensity of pattern2 is higher than pattern. This is because we set that pattern1’s outputA concentration is 80nM and pattern2’s outputA is 120nM.
+           <br>Moreover, we could confirm that pattern2 needs reaction time more than pattern1. This is because in pattern2, outputA in step2 is released after outputB in step1 is released.
+           For this reason, we could generate two outputs having different concentration by using Universal Strand Generator.
+
+           
+       </div>
+       
+       <div class="top_bar">
+           <h1>2. Logic gate part in A/ D converter </h1>
+       </div>
+       
+       <div class="text_temp">
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We experimented Threshold gate and NOT gate in A/D converter. To confirm whether output is released, we ran agarose gel electrophoresis.
+       </div>
+       
+       <div class="center_fig">
+          <img src="common/img/Wet_image/Figure7.png" width="700" height="176" alt="" />
+       </div>
+       
+       <div class="title_center3">Figure 7: Expectation of threshold gate and not gate reaction
+       </div>
+       
+       <div class="top_bar">
+           <h2>Materials and Methods</h2>
+       </div>
+       
+       <div class="text_temp">
+           <font size="5">Step 1: Design DNA sequences</font>
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We designed DNA sequences with NUPACK.
+           <br>We considered minimum free energy of each reaction and designed DNA sequences for DNA strand displacement reaction easily.
+       </div>
+       <br>
+       <div class="title_center5">Table 5: Threshold gate sequences </div>
+       
+       <div class="center_fig">
+           <img src="common/img/Wet_image/Table5.png" width="702" height="743" alt="" />
+       </div>
+       <br>
+       <br>
+       <div class="title_center5">Table 6: NOT gate sequences </div>
+       
+       <div class="center_fig">
+           <img src="common/img/Wet_image/Table6.png" width="668" height="818" alt="" />
+       </div>
+       <br>
+       <div class="text_temp">
+           <font size="5">Step 2: DNA preparation</font>
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We ordered all DNAs of liquid state and those concentrations are 100μM to Wako Pure Chemical Industries, Ltd. We diluted DNAs with following TE buffer and regulated the DNA concentration as Table8. Then, DNA are Stirring with vortex and centrifugal machine.
+       </div>
+       
+       <div class="title_center5">Table 7: TE buffer Composition</div>
+       
+       <div class="center_fig">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="common/img/Wet_image/Table7.png" width="432" height="105" alt="" />
+       </div>
+       <br>
+       <div class="title_center5">Table 8: Each element concentration</div>
+       
+       <div class="center_fig">
+           <img src="common/img/Wet_image/Table8.png" width="700" height="305" alt="" />
+       </div>
+       
+       <div class="experiment_img1r_back">
+           <div class="experiment_img1r">
+               <div class="experiment_img_w1r">
+                   <img src="common/img/Wet_image/Figure8.png" width="180" height="240" alt="" align="left"/>
+               </div>
+               
+               <div class="experiment_h4r">
+                   <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure 8: Incubator (ASTEC)</h4>
+                   
+               </div>
+           </div>
+           <div class="experiment_img1r">
+               <div class="experiment_img_w1r">
+                   <<img src="common/img/Wet_image/Figure9.png" width="319" height="240" alt="" align="left"/>
+               </div>
+               <div class="experiment_h4r">
+                   <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Figure 9: Electrophoresis chamber(Mupid)</h4>
+                   
+               </div>
+           </div>
+       </div>
+       
+       <div class="experiment_text1r">
+           <p><font size="5">Step 3: Annealing</font>
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Threshold and Gate:output were formed
+           by cooling with incubator.
+           (from 95 to 20℃, -2℃/min)
+           <br><font size="5">Step 4: Making 5% agarose gel</font>
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We added agarose(5mg) and TBE buffer(95ml)
+           and heated them in the microwave oven until
+           agarose and TBE buffer completely dissolved.
+           After the agarose had cooled, poured the agarose
+           in the holder which was set the comb.Agarose hardened completely, removed
+           the comb and moved agarose to chamber.
+           We added TBE buffer to the chamber.
+           <p/>
+           <div class="title_center222">Table 9: TBE buffer Composition</div>
+           
+           <div class="center_fig">
+               <img src="common/img/Wet_image/Table9.png" width="280" height="94" alt="" />
+           </div>
+           
+       </div>
+      
    
-   
+       <div class="text_temp">
+           <font size="5">Step 5: Toehold exchange reaction progression</font>
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We put all DNA into the tube and mixed them at normal temperature.
+        </div>
+       <div class="text_temp">
+           <font size="5">Step 6: Running the agarose gel electrophoresis</font>
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We added mixed DNA (5μl) and 6× Low Molecular Weight DNA Ladder(1μl). Next, we applied mixed solution (6μl) to each gel-well, and ran electrophoretic device   at 100V, for 30mins.
+          <br> When we finished electrophoresis, we moved gel to the container that is added GelRed (1μl). We shook the container with seesaw shaker. Putting elements in each lane as follow, and we verified output’s difference whether the input was high or low.
+
+       </div>
+       <div class="text_temp">
+           ・Threshold gate
+          <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1Lane Input(high),Threshold
+          <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2Lane Input(low), Threshold
+          <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3Lane Input(high), Threshold, Gate:output, Fuel
+          <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4Lane Input(low), Threshold, Gate:output, Fuel
+       </div>
+       
+       <div class="text_temp">
+           ・NOT gate
+           <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5Lane Input(high)
+           <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6Lane Input(low)
+           <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7Lane Input(high), Inverter, Threshold, Gate:output, Fuel
+           <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8Lane Input(low), Inverter, Threshold, Gate:output, Fuel
+       </div>
+       <div class="text_temp">
+           <font size="5">Step 7: Observing the band with gel imager.</font>
+       </div>
+       
+       <div class="center_fig">
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="common/img/Wet_image/Figure10.png" width="378" height="400" alt="" />
+       </div>
+       
+       <div class="title_center3">Figure 10: Gel imager (NIPPON Genetics)
+       </div>
+       
+       <div class="text_temp">
+           <font size="5">Result</font>
+           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We couldn't see the desired level output in band.
+       </div>
+       <div class="text_temp">
+           <font size="5">Reference</font>
+           <br>・Team Sendai(2014) Materials and Methods. Available
+           <br>at : <a href="http://teamsendai2014.github.io/protocol.html">http://teamsendai2014.github.io/protocol.html</a> (Accessed 14 October 2015 )
+
+       </div>
+       
     </main>
     
 </div><!-- /#mainContent -->
 
 <div id="sidebar">
     
-    <div class="side_fig">
-        <img src="common/img/logo/kyutech_study_logo.png" width="174" height="80" alt="" />
-    </div>
-    
     <nav>
         <ul>
             <li><a href="index.html">Project</a></li>
             <li><a href="index2.html">Design</a></li>
             <li><a href="index3.html">Dry Experiment</a></li>
-            <li class="here"><a href="index3_2.html">Wet Experiment</a></li>
             <li><a href="index3_3.html">Art of modeling</a></li>
-            <li><a href="index4.html">Team members</a></li>
+            <li><a href="index_se.html">DNA sequence</a></li>
+            <li class="here"><a href="index3_2.html">Wet Experiment</a></li>
+            <li><a href="index4.html">Team</a></li>
             <li><a href="index5.html">Supplement</a></li>
         </ul>
     </nav>
+    
     
     
     
@@ -85,13 +316,12 @@
 <footer class="demo-footer" role="contentinfo">
     <div class="container">
         <div class="row">
-            <div class="col-md-2 col-sm-6">
+            <div class="col-md-2 col-sm-1">
                 <p><strong><a href="index.html">Project</a></strong></p>
-                <div class="list-group margin-top-sm">
-                    
-                </div>
+                <p><strong><a href="index4.html">Team </a></strong></p>
+                <p><strong><a href="index5.html">Supplement</a></strong></p>
             </div>
-            <div class="col-md-2 col-sm-6">
+            <div class="col-md-2 col-sm-1">
                 <p><strong><a href="index2.html">Design</a></strong></p>
                 <div class="list-group margin-top-sm">
                     <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
@@ -99,21 +329,41 @@
                     <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
                 </div>
             </div>
-            <div class="col-md-2 col-sm-6">
+            
+            <div class="col-md-2 col-sm-1">
                 <p><strong><a href="index3.html">Dry Experiment</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#de_2" class="list-group-item">DNA A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
             </div>
-            <div class="col-md-2 col-sm-6">
-                <p><strong><a href="index3_2.html">Wet Experiment</a></strong></p>
-            </div>
-            <div class="col-md-2 col-sm-6">
+            
+            <div class="col-md-2 col-sm-1">
                 <p><strong><a href="index3_3.html">Art of modeling</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#de_2" class="list-group-item">DNA A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-1">
+                <p><strong><a href="index_se.html">DNA sequence</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#de_2" class="list-group-item">DNA A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-1">
+                <p><strong><a href="index3_2.html">Wet Experiment</a></strong></p>
+                <div class="list-group margin-top-sm">
+                    <a href="index2.html" class="list-group-item">A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#de_2" class="list-group-item">DNA A/D Convertor <i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                    <a href="index2.html#key_elements" class="list-group-item">Key elements<i class="glyphicon glyphicon-chevron-right text-arrowIcon"></i></a>
+                </div>
             </div>
             
-            
-            <div class="col-md-2 col-sm-6">
-                <p><strong><a href="index4.html">Team members</a></strong></p>
-                <p><strong><a href="index5.html">Supplement</a></strong></p>
-            </div>
             
             
         </div><!-- /.row -->
